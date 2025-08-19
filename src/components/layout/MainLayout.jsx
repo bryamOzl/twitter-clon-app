@@ -4,21 +4,15 @@ import Trends from "./Trends";
 
 export default function MainLayout() {
     return (
-        <div className="h-screen w-full max-w-7xl mx-auto grid grid-cols-12">
+        <div className="flex flex-col md:flex-row min-h-screen">
             {/* Sidebar */}
-            <aside className="col-span-2 border-r border-gray-200">
-                <Sidebar />
-            </aside>
+            <aside className="hidden md:block md:w-64 border-r p-4"><Sidebar /></aside>
 
             {/* Feed */}
-            <main className="col-span-7 border-r border-gray-200">
-                <Feed />
-            </main>
+            <main className="flex-1 p-4"><Feed /></main>
 
             {/* Trends */}
-            <section className="col-span-3 hidden lg:block">
-                <Trends />
-            </section>
+            <section className="hidden lg:block lg:w-64 border-l p-4"><Trends /></section>
         </div>
     );
 }
